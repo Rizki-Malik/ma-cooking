@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Admin from './pages/Admin'
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Register />
+      <Home />
     </>
   )
 }

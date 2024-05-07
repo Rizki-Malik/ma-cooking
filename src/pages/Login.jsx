@@ -70,7 +70,7 @@ export default function Login() {
           </p>
 
           <div className="form-button">
-            <button className="sign-in">Sign In</button>
+            <button className="button">Sign In</button>
           </div>
         </form>
       </div>

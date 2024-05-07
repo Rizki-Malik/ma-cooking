@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Brand from "../components/Brand";
+import Login from "./Login";
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -36,12 +37,7 @@ export default function Register() {
   };
 
   if (registrationSuccess) {
-    return (
-      <div>
-        <h2>Registration Successful!</h2>
-        <p>You can now log in with your credentials.</p>
-      </div>
-    );
+    return <Login/>
   }
 
   return (
@@ -87,7 +83,7 @@ export default function Register() {
             </p>
 
           <div className="form-button">
-            <button className="sign-in">Sign Up</button>
+            <button className="button">Sign Up</button>
           </div>
         </form>
       </div>

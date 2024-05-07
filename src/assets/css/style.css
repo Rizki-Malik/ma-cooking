@@ -8,8 +8,15 @@
     background-color: #f6f4f3;
 }
 
-.header{
+.login{
     margin-top: 260px;
+}
+
+.register{
+    margin-top: 160px;
+}
+
+.header{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,6 +28,7 @@
     font-size: 25px;
     display: flex;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .brand img {
@@ -42,7 +50,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #d1c8c1;
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     height: 60px;
     padding: 15px;
     border: none;
@@ -60,7 +69,7 @@
     color: black;
 }
 
-.sign-in{
+.button{
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -71,4 +80,155 @@
     border-radius: 50px;
     color: white;
     cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 150px 0 150px;
+    border-bottom: black 1px solid;
+}
+
+.navbar-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-menu a{
+    font-family: "Montserrat", sans-serif;
+    margin: 0 25px;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.bento {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1800px;
+    margin: 20px 0px 0px 40px;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.top img {
+    width: auto; 
+    height: 525px;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 115px 0px 115px;
+}
+
+.bento-tb {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    flex: 1;
+    margin-right: 50px;
+    margin-left: 25px;
+}
+  
+.bento-tb p {
+    margin-bottom: 15px; 
+}
+  
+.bento-tb button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #d1c8c1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+  
+.bimg img {
+    width: 200px;
+    height: auto;
+    margin: 20px;
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+@media (max-width: 768px) { 
+    .navbar-menu {
+      flex-direction: column; 
+      align-items: center;
+    } 
+  
+    .navbar-menu a { 
+      margin: 10px 0; 
+    }
+  
+    .bottom {
+      flex-direction: column;
+    }
+}
+
+.list{
+    margin: 50px 120px 50px 120px;
+}
+
+.info-course-l{
+    padding-top: 20px;
+}
+
+.info-course-r{
+    padding-top: 20px;
+}
+
+.fit{
+    object-fit: cover;
+    width: 686px;
+    height: 342px;
+    border-radius: 8px;
+    margin: 0px 50px 0px 50px;
+}
+
+.list-item-l{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+
+.list-item-r{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 50px 0px 50px;
+}
+
+.title{
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.period{
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.summary{
+    font-family: "Poppins", sans-serif;
+}
+
+.info-course-l .lb{
+    margin-top: 50px;
+    margin-left: 500px;
+}
+
+.info-course-r .lb{
+    margin-top: 50px;
+    margin-left: 500px;
 }
