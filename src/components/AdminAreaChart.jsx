@@ -44,7 +44,7 @@ export default function AdminAreaChart() {
     <>
       <Card className="sm:mx-auto sm:max-w-lg lg:m-0">
         <h3 className="font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
-          Follower metrics
+          Enrollment metrics
         </h3>
         <AreaChart
           data={data}

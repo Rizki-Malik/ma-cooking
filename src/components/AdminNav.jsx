@@ -1,11 +1,13 @@
 import Chef from '../assets/img/chef-1.png'
 import Brand from './Brand';
+import Logo from '../assets/img/admin-logo.png'
 
 export default function AdminNav(){
     return(
         <>
             <div className="admin-navbar">
                 <Brand 
+                    Logo={Logo}
                     imgStyle={{ marginLeft: '50px' }}  
                     textStyle={{ fontWeight: 'bold' }} 
                 />

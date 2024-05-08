@@ -7,21 +7,21 @@ function classNames(...classes) {
 
 const data = [
   {
-    name: 'Unique visitors',
-    stat: '10,450',
-    change: '-12.5%',
-    changeType: 'negative',
-  },
-  {
-    name: 'Bounce rate',
-    stat: '56.1%',
-    change: '+1.8%',
+    name: 'Enrollment Rate',
+    stat: '85%',
+    change: '+5%',
     changeType: 'positive',
   },
   {
-    name: 'Visit duration',
-    stat: '5.2min',
-    change: '+19.7%',
+    name: 'Course Completion Rate',
+    stat: '70%',
+    change: '+10%',
+    changeType: 'positive',
+  },
+  {
+    name: 'Student Satisfaction',
+    stat: '4.5/5',
+    change: '+0.2',
     changeType: 'positive',
   },
 ];

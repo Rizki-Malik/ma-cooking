@@ -1,7 +1,4 @@
-import Logo from '../assets/img/logo.png'
-
-
-export default function Brand({ imgStyle, textStyle }) {
+export default function Brand({ imgStyle, textStyle, Logo }) {
     return (
       <div className="brand">
         <img style={imgStyle} src={Logo} alt="Logo" />
