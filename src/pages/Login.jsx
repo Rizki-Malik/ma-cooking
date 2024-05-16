@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import useInput from "../utility/hooks/useInput";
 import Brand from "../components/Brand";
+import Logo from '../assets/img/logo.png'
+import Home from "./Home";
 
 export default function Login() {
   const { value: username, onChange: handleUsernameChange } = useInput('');
@@ -42,14 +44,7 @@ export default function Login() {
   // If the user is logged in
   if (isLoggedIn) {
     return (
-      <div>
-        <h2>Welcome, {username}!</h2>
-        <button onClick={() => {
-          localStorage.removeItem('username');
-          localStorage.removeItem('password');
-          setIsLoggedIn(false);
-        }}>Log Out</button>
-      </div>
+      <Home username={username} />
     );
   }
 
@@ -57,7 +52,7 @@ export default function Login() {
     <>
       <div className="login">
         <div className="header">
-          <Brand />
+          <Brand Logo={Logo} />
         </div>
         <form className="form" onSubmit={onSubmitHandler}>
           <input className="choco" type="text" placeholder="USERNAME" value={username} onChange={handleUsernameChange} />

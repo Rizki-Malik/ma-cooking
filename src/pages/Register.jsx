@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Brand from "../components/Brand";
 import Login from "./Login";
+import Logo from '../assets/img/logo.png'
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -44,7 +45,7 @@ export default function Register() {
     <>
       <div className="register">
         <div className="header">
-          <Brand />
+          <Brand Logo={Logo} />
         </div>
         <form className="form" onSubmit={handleSubmit}>
           <input
@@ -79,7 +80,7 @@ export default function Register() {
           {error && <p className="error-message">{error}</p>}
 
             <p className="nav-to">
-                Already have account? <a href="/register">SIGN IN!</a>
+                Already have account? <a href="/login">SIGN IN!</a>
             </p>
 
           <div className="form-button">
