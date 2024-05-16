@@ -5,10 +5,25 @@ import Kpi from "../components/Kpi"
 import TableAdmin from "../components/TableAdmin"
 import ChartComposition from "../components/ChartComposition"
 import SparkChart from "../components/SparkChart"
-
+import { getUser } from "../utility/auth";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Card } from '@tremor/react';
 
 export default function Admin(){
+
+    const navigate = useNavigate();
+    const { username: storedUsername, isAdmin } = getUser();
+
+    useEffect(() => {
+        if (storedUsername) {
+          navigate(isAdmin ? '/dashboard' : '/');
+          console.log(isAdmin);
+        }else{
+            navigate('/login');
+        }
+    }, [storedUsername, isAdmin, navigate]);
+
     return(
         <>
             <AdminNav />

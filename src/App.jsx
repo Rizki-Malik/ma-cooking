@@ -10,7 +10,6 @@ function App() {
     <>
     <Suspense fallback={null}>
       <RouterProvider router={Router} />
-      {/* <Admin /> */}
     </Suspense>
     </>
   )

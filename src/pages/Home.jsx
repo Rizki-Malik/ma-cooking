@@ -3,8 +3,23 @@ import Atas from "../assets/img/atas.png"
 import B1 from "../assets/img/bawah-1.png"
 import B2 from "../assets/img/bawah-2.png"
 import B3 from "../assets/img/bawah-3.png"
+import { getUser } from "../utility/auth";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Home({ username }){
+    const navigate = useNavigate();
+    const { username: storedUsername, isAdmin } = getUser();
+
+    useEffect(() => {
+        if (storedUsername) {
+            navigate(isAdmin ? '/dashboard' : '/');
+            console.log(isAdmin);
+        }else{
+            navigate('/login');
+        }
+    }, [storedUsername, isAdmin, navigate]);
+
     return(
         <>
             <Navbar />
