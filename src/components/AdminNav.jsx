@@ -36,9 +36,9 @@ export default function AdminNav(){
                     <img src={Chef} alt="avatar-admin" />
                     </label>
                     {dropdownOpen && (
-                    <div className="dropdown-menu-admin">
-                        <button onClick={handleLogout}>Logout</button>
-                    </div>
+                        <div className="dropdown-menu-admin">
+                            <button onClick={handleLogout}>Logout</button>
+                        </div>
                     )}
                 </div>
             </div>
