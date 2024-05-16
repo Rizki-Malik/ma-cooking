@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Brand from "../components/Brand";
 import Logo from '../assets/img/logo.png';
 import { useNavigate } from "react-router-dom";
+import AlertError from '../components/AlertError'
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -9,6 +10,7 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
   const [error, setError] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -16,12 +18,17 @@ export default function Register() {
     setError(null);
 
     if(password != repassword){
-      setError('Password and repassword are not the same');
+      setError('Password and re-entered password are not the same');
       return;
     }
 
     if (username.trim() === '' || password.trim() === '') {
       setError('Username and password are required');
+      return;
+    }
+
+    if (email.trim() === ''){
+      setError('Email is required');
       return;
     }
 
@@ -34,8 +41,23 @@ export default function Register() {
     navigate('/login');
   };
 
+  useEffect(() => {
+    if (error) {
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+      setTimeout(() => {
+        setError(null)
+      }, 3500);
+    }
+  }, [error]);
+
   return (
     <div className="register">
+      <div className={`alert ${showAlert ? 'alert-animate' : 'alert-hidden'}`}>
+        {error && <AlertError message={error} />}
+      </div>
       <div className="header">
         <Brand Logo={Logo} />
       </div>
@@ -44,8 +66,6 @@ export default function Register() {
         <input className="choco" type="text" placeholder="USERNAME" value={username} onChange={(e) => setUsername(e.target.value)} />
         <input className="choco" type="password" placeholder="PASSWORD" value={password} onChange={(e) => setPassword(e.target.value)} />
         <input className="choco" type="password" placeholder="RE-TYPE PASSWORD" value={repassword} onChange={(e) => setRepassword(e.target.value)} />
-
-        {error && <p className="error-message">{error}</p>}
 
         <p className="nav-to">
           Already have an account? <a href="/login">SIGN IN!</a>
