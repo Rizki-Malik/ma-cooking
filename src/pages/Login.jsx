@@ -3,7 +3,7 @@ import useInput from "../utility/hooks/useInput";
 import Brand from "../components/Brand";
 import Logo from '../assets/img/logo.png';
 import AlertError from '../components/AlertError'
-import { login, getUser } from "../utility/auth";
+import { authenticate, storeUser, getUser } from "../utility/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -12,21 +12,20 @@ export default function Login() {
   const [error, setError] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
-  
-  const { username: storedUsername, isAdmin } = getUser();
-  
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
     setError(null);
-    
+
     if (username.trim() === '' || password.trim() === '') {
       setError('Username and password are required');
       return;
     }
-    
-    if (login(username, password)) {
-      navigate(isAdmin ? '/dashboard' : '/');
-      console.log(isAdmin);
+
+    const user = authenticate(username, password);
+    if (user) {
+      storeUser(user);
+      navigate(user.isAdmin? '/dashboard' : '/');
     } else {
       setError('Invalid username or password');
     }
@@ -46,7 +45,7 @@ export default function Login() {
 
   return (
     <div className="login">
-      <div className={`alert ${showAlert ? 'alert-animate' : 'alert-hidden'}`}>
+      <div className={`alert ${showAlert? 'alert-animate' : 'alert-hidden'}`}>
         {error && <AlertError message={error} />}
       </div>
       <div className="header">

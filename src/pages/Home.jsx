@@ -14,7 +14,8 @@ export default function Home({ username }){
     useEffect(() => {
         if (storedUsername) {
             navigate(isAdmin ? '/dashboard' : '/');
-            console.log(isAdmin);
+            // console.log(isAdmin);
+            console.log(storedUsername);
         }else{
             navigate('/login');
         }
